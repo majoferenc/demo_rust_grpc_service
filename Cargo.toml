@@ -5,6 +5,12 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[profile.release]
+strip = true
+opt-level = "s" # Optimize for binary size
+lto = true # Enable link time optimization
+codegen-units = 1 # Maximize size reduction optimizations
+
 [[bin]]
 name = "accounts-microservice"
 path = "src/server.rs"
